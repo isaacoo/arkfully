@@ -10,13 +10,42 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--forest-dark) 0%, var(--wood-dark) 100%);
-  background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: var(--white);
   text-align: center;
   overflow: hidden;
+}
+
+/* 배경 이미지 필터 효과를 위한 레이어 */
+.hero-background-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: contrast(1.05) saturate(1.05) brightness(1.0);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+  filter: contrast(1.25) saturate(1.4) brightness(0.8) hue-rotate(-8deg);
+  transition: filter 0.5s ease;
 }
 
 /* 산의 실루엣 효과 */
@@ -38,16 +67,25 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 77, 46, 0.7) 0%,
-    rgba(61, 40, 23, 0.6) 100%
-  );
+  background: 
+    radial-gradient(
+      ellipse at center,
+      rgba(26, 77, 46, 0.3) 0%,
+      rgba(26, 77, 46, 0.5) 50%,
+      rgba(61, 40, 23, 0.6) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(26, 77, 46, 0.5) 0%,
+      rgba(61, 40, 23, 0.45) 50%,
+      rgba(45, 30, 20, 0.4) 100%
+    );
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   max-width: 800px;
   padding: 2rem;
   animation: fadeInUp 1s ease;
@@ -59,7 +97,7 @@
   font-weight: 700;
   letter-spacing: 12px;
   margin-bottom: 1rem;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
   display: inline-block;
 }
@@ -84,7 +122,7 @@
   font-weight: 400;
   letter-spacing: 3px;
   color: var(--beige);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .hero-description {
@@ -92,6 +130,7 @@
   margin-bottom: 2.5rem;
   line-height: 1.8;
   opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -170,7 +209,7 @@
   color: var(--white);
   font-size: 0.9rem;
   animation: bounce 2s infinite;
-  z-index: 1;
+  z-index: 3;
 }
 
 .arrow {
