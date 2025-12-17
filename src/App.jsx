@@ -10,7 +10,7 @@ import './App.css'
 
 function App() {
   return (
-    <Router basename="/arkfully-website">
+    <Router basename="/arkfully">
       <div className="App">
         <Navbar />
         <Routes>
