@@ -39,7 +39,7 @@ const Facilities = () => {
       <section className="page-hero">
         <div className="page-hero-overlay"></div>
         <div className="page-hero-content">
-          <h1>시설 소개</h1>
+          <h1>Facilities</h1>
           <p>아크풀리의 다양한 시설을 확인해보세요</p>
         </div>
       </section>

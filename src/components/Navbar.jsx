@@ -26,7 +26,7 @@ const Navbar = () => {
         <button
           className="mobile-menu-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="메뉴"
+          aria-label="Menu"
         >
           <span></span>
           <span></span>
@@ -39,7 +39,7 @@ const Navbar = () => {
               className={isActive('/') ? 'active' : ''}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              홈
+              Home
             </Link>
           </li>
           <li>
@@ -48,7 +48,7 @@ const Navbar = () => {
               className={isActive('/about') ? 'active' : ''}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              공간 소개
+              About
             </Link>
           </li>
           <li>
@@ -57,7 +57,7 @@ const Navbar = () => {
               className={isActive('/facilities') ? 'active' : ''}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              시설 소개
+              Facilities
             </Link>
           </li>
           <li>
@@ -66,7 +66,7 @@ const Navbar = () => {
               className={isActive('/nearby') ? 'active' : ''}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              주변 명소
+              Nearby
             </Link>
           </li>
           <li>
@@ -75,7 +75,7 @@ const Navbar = () => {
               className={isActive('/reservation') ? 'active' : ''}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              예약
+              Reservation
             </Link>
           </li>
         </ul>

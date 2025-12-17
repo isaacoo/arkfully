@@ -6,7 +6,7 @@ const About = () => {
       <section className="page-hero">
         <div className="page-hero-overlay"></div>
         <div className="page-hero-content">
-          <h1>공간 소개</h1>
+          <h1>About</h1>
           <p>아크풀리에 대해 알아보세요</p>
         </div>
       </section>

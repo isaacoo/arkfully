@@ -27,10 +27,10 @@
 }
 
 .navbar-logo {
-  font-family: 'Noto Serif KR', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 3px;
+  font-weight: 600;
+  letter-spacing: 2px;
   color: var(--wood-dark);
   transition: var(--transition);
   position: relative;
@@ -59,12 +59,15 @@
 }
 
 .navbar-menu li a {
-  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
   font-weight: 500;
+  letter-spacing: 1px;
   color: var(--text-color);
   transition: var(--transition);
   position: relative;
   padding: 0.5rem 0;
+  text-transform: uppercase;
 }
 
 .navbar-menu li a::after {

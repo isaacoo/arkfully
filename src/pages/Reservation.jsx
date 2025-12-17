@@ -6,7 +6,7 @@ const Reservation = () => {
       <section className="page-hero">
         <div className="page-hero-overlay"></div>
         <div className="page-hero-content">
-          <h1>예약</h1>
+          <h1>Reservation</h1>
           <p>아크풀리를 예약하고 방문해보세요</p>
         </div>
       </section>

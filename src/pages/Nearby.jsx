@@ -29,7 +29,7 @@ const Nearby = () => {
       <section className="page-hero">
         <div className="page-hero-overlay"></div>
         <div className="page-hero-content">
-          <h1>주변 명소</h1>
+          <h1>Nearby</h1>
           <p>아크풀리 주변의 가볼만한 곳들을 소개합니다</p>
         </div>
       </section>
