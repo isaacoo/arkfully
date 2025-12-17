@@ -1,8 +1,20 @@
 .footer {
-  background: var(--primary-color);
-  color: var(--white);
+  background: linear-gradient(180deg, var(--wood-dark) 0%, var(--forest-dark) 100%);
+  color: var(--cream);
   padding: 3rem 0 1rem;
   margin-top: auto;
+  position: relative;
+}
+
+/* 나무 질감 느낌 */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--wood-medium), var(--forest-medium), var(--wood-medium));
 }
 
 .footer-container {

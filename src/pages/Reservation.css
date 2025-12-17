@@ -9,8 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-image: url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1920&q=80');
+  background: linear-gradient(135deg, var(--forest-dark) 0%, var(--wood-dark) 100%);
+  background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80');
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -23,7 +23,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 77, 46, 0.7) 0%,
+    rgba(61, 40, 23, 0.6) 100%
+  );
 }
 
 .page-hero-content {
@@ -32,9 +36,11 @@
 }
 
 .page-hero-content h1 {
-  font-size: 3rem;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page-hero-content p {
@@ -44,7 +50,7 @@
 
 .reservation-content {
   padding: 5rem 0;
-  background: #f8f9fa;
+  background: var(--cream-light);
 }
 
 .reservation-info {
@@ -54,9 +60,25 @@
 }
 
 .reservation-info h2 {
-  font-size: 2.5rem;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2.8rem;
   margin-bottom: 1.5rem;
-  color: var(--primary-color);
+  color: var(--wood-dark);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 1.5rem;
+}
+
+.reservation-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wood-medium), var(--forest-medium), var(--wood-medium));
 }
 
 .reservation-info > p {
@@ -82,24 +104,45 @@
 .link-card {
   background: var(--white);
   padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(61, 40, 23, 0.15);
   transition: var(--transition);
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(61, 40, 23, 0.1);
+}
+
+.link-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--wood-medium), var(--forest-medium));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition);
+}
+
+.link-card:hover::before {
+  transform: scaleX(1);
 }
 
 .link-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(61, 40, 23, 0.25);
+  border-color: var(--wood-medium);
 }
 
 .link-card h3 {
-  font-size: 1.5rem;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
-  color: var(--primary-color);
+  color: var(--wood-dark);
+  font-weight: 600;
 }
 
 .link-card p {
@@ -113,7 +156,7 @@
   bottom: 2.5rem;
   right: 2.5rem;
   font-size: 1.5rem;
-  color: var(--primary-color);
+  color: var(--wood-dark);
   transition: var(--transition);
 }
 
@@ -126,14 +169,29 @@
   margin: 0 auto;
   background: var(--white);
   padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(61, 40, 23, 0.15);
+  border: 1px solid rgba(61, 40, 23, 0.1);
 }
 
 .reservation-notice h3 {
-  font-size: 1.5rem;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.6rem;
   margin-bottom: 1.5rem;
-  color: var(--primary-color);
+  color: var(--wood-dark);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.reservation-notice h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wood-medium), var(--forest-medium));
 }
 
 .reservation-notice ul {
@@ -153,7 +211,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--primary-color);
+  color: var(--forest-medium);
   font-weight: bold;
   font-size: 1.2rem;
 }

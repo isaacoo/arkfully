@@ -9,8 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-image: url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1920&q=80');
+  background: linear-gradient(135deg, var(--forest-dark) 0%, var(--wood-dark) 100%);
+  background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80');
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -23,7 +23,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 77, 46, 0.7) 0%,
+    rgba(61, 40, 23, 0.6) 100%
+  );
 }
 
 .page-hero-content {
@@ -32,9 +36,11 @@
 }
 
 .page-hero-content h1 {
-  font-size: 3rem;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page-hero-content p {
@@ -44,7 +50,7 @@
 
 .about-content {
   padding: 5rem 0;
-  background: var(--white);
+  background: var(--cream-light);
 }
 
 .about-section {
@@ -64,9 +70,22 @@
 }
 
 .about-text h2 {
-  font-size: 2rem;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2.2rem;
   margin-bottom: 1.5rem;
-  color: var(--primary-color);
+  color: var(--wood-dark);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.about-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wood-medium), var(--forest-medium));
 }
 
 .about-text p {
@@ -79,14 +98,34 @@
 .about-image-placeholder {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 10px;
+  background: linear-gradient(135deg, var(--forest-dark) 0%, var(--wood-dark) 100%);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--cream);
   font-size: 1.2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 40px rgba(61, 40, 23, 0.25);
+  border: 2px solid rgba(61, 40, 23, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 30px,
+      rgba(0, 0, 0, 0.05) 30px,
+      rgba(0, 0, 0, 0.05) 31px
+    );
 }
 
 @media (max-width: 968px) {

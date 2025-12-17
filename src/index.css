@@ -5,24 +5,63 @@
 }
 
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #34495e;
-  --accent-color: #e8e8e8;
-  --text-color: #333;
-  --text-light: #666;
+  /* 방주의 짙은 나무색 */
+  --wood-dark: #3d2817;
+  --wood-medium: #4a2c1a;
+  --wood-light: #5c3a21;
+  --wood-accent: #6b4e3d;
+  
+  /* 산 속 숲의 짙은 초록색 */
+  --forest-dark: #1a4d2e;
+  --forest-medium: #2d5a3d;
+  --forest-light: #3d6b4f;
+  --forest-accent: #4a7c5f;
+  
+  /* 크림/베이지 톤 */
+  --cream: #f5f1e8;
+  --cream-light: #faf8f3;
+  --beige: #e8e0d3;
+  
+  /* 기본 컬러 */
+  --primary-color: var(--wood-dark);
+  --secondary-color: var(--forest-dark);
+  --accent-color: var(--beige);
+  --text-color: #2c2418;
+  --text-light: #5a4f42;
   --white: #ffffff;
-  --transition: all 0.3s ease;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-color);
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
+  background: var(--cream-light);
+}
+
+/* 나무 텍스처 배경 패턴 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(61, 40, 23, 0.02) 2px,
+      rgba(61, 40, 23, 0.02) 4px
+    );
+  pointer-events: none;
+  z-index: -1;
 }
 
 html {
