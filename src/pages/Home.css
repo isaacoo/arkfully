@@ -275,6 +275,7 @@
   );
 }
 
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -332,6 +333,7 @@
   background: var(--cream-light);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
+
 
 .section-title {
   font-family: 'Noto Serif KR', serif;

@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom'
-import heroImage from '../assets/hero-winter.jpg'
 import './Home.css'
 
 const Home = () => {
   return (
     <div className="home">
-      <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>
+      <section className="hero" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80')` }}>
         <div 
           className="hero-background-filter" 
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80')` }}
         ></div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
