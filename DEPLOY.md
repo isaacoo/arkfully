@@ -6,11 +6,13 @@
 
 1. GitHub에 저장소를 생성합니다.
 2. 저장소 이름을 `arkfully-website`로 설정합니다.
-3. 코드를 푸시하면 자동으로 배포됩니다.
+3. 저장소 Settings > Pages로 이동하여 Source를 "GitHub Actions"로 설정합니다.
+4. 코드를 푸시하면 자동으로 배포됩니다.
 
 **주의사항:**
 - 저장소 이름이 `arkfully-website`가 아닌 경우, `vite.config.js`의 `base` 경로를 변경해야 합니다.
 - 예: 저장소 이름이 `my-arkfully`인 경우, `base: '/my-arkfully/'`로 변경
+- 403 에러가 발생하는 경우, workflow 파일에 `permissions` 설정이 포함되어 있는지 확인하세요.
 
 ### 방법 2: 수동 배포
 
@@ -48,4 +50,27 @@ base: '/your-repo-name/'
 // App.jsx
 <Router basename="/your-repo-name">
 ```
+
+## 문제 해결
+
+### 403 에러 (Write access to repository not granted)
+
+이 에러는 GitHub Actions의 권한 문제입니다. 해결 방법:
+
+1. **workflow 파일 확인**: `.github/workflows/deploy.yml` 파일에 `permissions` 설정이 포함되어 있는지 확인
+   ```yaml
+   permissions:
+     contents: read
+     pages: write
+     id-token: write
+   ```
+
+2. **GitHub Pages 설정 확인**:
+   - 저장소 Settings > Pages로 이동
+   - Source를 "GitHub Actions"로 설정
+   - Actions 권한이 활성화되어 있는지 확인 (Settings > Actions > General)
+
+3. **저장소 권한 확인**:
+   - 저장소가 Private인 경우, GitHub Pro 계정이 필요할 수 있습니다
+   - 저장소 Settings > Actions > General에서 "Workflow permissions"를 "Read and write permissions"로 설정
 
