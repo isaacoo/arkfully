@@ -5,6 +5,7 @@ import About from './pages/About'
 import Facilities from './pages/Facilities'
 import Nearby from './pages/Nearby'
 import Reservation from './pages/Reservation'
+import Instagram from './pages/Instagram'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/nearby" element={<Nearby />} />
           <Route path="/reservation" element={<Reservation />} />
+          <Route path="/instagram" element={<Instagram />} />
         </Routes>
         <Footer />
       </div>

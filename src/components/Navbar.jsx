@@ -78,6 +78,15 @@ const Navbar = () => {
               Reservation
             </Link>
           </li>
+          <li>
+            <Link
+              to="/instagram"
+              className={isActive('/instagram') ? 'active' : ''}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Instagram
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
